@@ -6,4 +6,7 @@ package cn.leetcode.leetcode;
  * @date 2023/3/4 19:56
  */
 public class Test {
+    public static void main(String[] args) {
+        
+    }
 }
