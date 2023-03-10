@@ -1,5 +1,6 @@
 package cn.leetcode.剑指Offer.从上到下打印二叉树3;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -61,6 +62,7 @@ public class Solution {
 //        solution.test1(solution);
 //        solution.test2(solution);
 //        solution.test3(solution);
+        System.out.println("==========Queue-offer(LinkedList-linkLast(e))-poll(LinkedList-unlinkFirst(e))==========");
         //队列 先进先出
         Queue<String> queue = new LinkedList<>();
         queue.offer("1");
@@ -70,7 +72,7 @@ public class Solution {
         while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
-        System.out.println("====================");
+        System.out.println("==========Stack-push(elementData[elementCount++])-pop(elementAt(len - 1))==========");
         //栈 先进后出
         Stack<String> stack = new Stack<>();
         stack.push("1");
@@ -79,6 +81,23 @@ public class Solution {
         stack.push("4");
         while (!stack.isEmpty()) {
             System.out.println(stack.pop());
+        }
+        System.out.println("=========Deque-offerFirst(ArrayDeque-addFirst(e))-pop(ArrayDeque-removeFirst)===========");
+        Deque<String> deque = new ArrayDeque<>();
+        deque.offerFirst("1");//push
+        deque.offerFirst("2");
+        deque.offerFirst("3");
+        deque.offerFirst("4");
+        while (!deque.isEmpty()) {
+            System.out.println(deque.pop());
+        }
+        System.out.println("=========Deque-offerLast(ArrayDeque-addLast(e))-pop(ArrayDeque-removeFirst)===========");
+        deque.offerLast("1");//push
+        deque.offerLast("2");
+        deque.offerLast("3");
+        deque.offerLast("4");
+        while (!deque.isEmpty()) {
+            System.out.println(deque.pop());
         }
     }
 
