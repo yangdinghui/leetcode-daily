@@ -14,6 +14,18 @@ import cn.leetcode.common.ListNode;
  * @date 2023/3/14 10:25
  */
 public class Solution {
+    public static ListNode getKthFromEnd2(ListNode head, int k) {
+        ListNode next;
+        ListNode pre = next = head;
+        for (int i = 0; i < k; i++) {
+            pre = pre.next;
+        }
+        while (pre != null) {
+            pre = pre.next;
+            next = next.next;
+        }
+        return next;
+    }
 
     public static ListNode getKthFromEnd(ListNode head, int k) {
         if (head == null) return null;
@@ -47,7 +59,10 @@ public class Solution {
         node3.next = node4;
         System.out.printf("原链表%s%n", head);
         System.out.printf(" 链表%s%n", getKthFromEnd(head, 4));
+        System.out.printf(" ->链表%s%n", getKthFromEnd2(head, 4));
         System.out.printf(" 链表%s%n", getKthFromEnd(head, 1));
+        System.out.printf(" ->链表%s%n", getKthFromEnd2(head, 1));
         System.out.printf(" 链表%s%n", getKthFromEnd(head, 2));
+        System.out.printf(" ->链表%s%n", getKthFromEnd2(head, 2));
     }
 }
