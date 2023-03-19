@@ -74,7 +74,17 @@ public class Solution {
         leftLeft.right = leftRight3;
         rightRight.left = rightLeft3;
         rightRight.right = rightRight3;
-        List<List<Integer>> listList = solution.pathSum(root, 22);
-        System.out.println(listList);
+//        List<List<Integer>> listList = solution.pathSum(root, 22);
+//        System.out.println(listList);
+        solution.mid(root);
+    }
+
+
+    // 打印中序遍历(中根) 左->根->右
+    public void mid(TreeNode root) {
+        if (root == null) return;
+        mid(root.left); // 左
+        System.out.println(root.val); // 根
+        mid(root.right); // 右
     }
 }
