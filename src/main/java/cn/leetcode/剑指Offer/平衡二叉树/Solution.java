@@ -12,6 +12,7 @@ import cn.leetcode.common.TreeNode;
 public class Solution {
 
     public boolean isBalanced(TreeNode root) {
+        recur(root)
         return recur(root) != -1;
     }
 

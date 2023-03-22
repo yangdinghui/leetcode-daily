@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author yangdh
@@ -70,6 +71,27 @@ public class Solution {
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
+    /**
+     * BFS
+     * @param root root
+     * @return deepLength
+     */
+    public int maxDepth4(TreeNode root) {
+        if (root == null) return 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int res = 0;
+        while (!queue.isEmpty()) {
+            res++;
+            int n = queue.size();
+            for (int i = 0; i < n; i++) {
+                TreeNode node = queue.poll();
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+        }
+        return res;
+    }
 
 
     /**
@@ -83,6 +105,7 @@ public class Solution {
         Solution solution = new Solution();
         TreeNode root = buildTreeNode();
         System.out.println(solution.maxDepth(root));
+        System.out.println(solution.maxDepth4(root));
     }
 
     public static TreeNode buildTreeNode() {
