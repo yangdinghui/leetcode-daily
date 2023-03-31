@@ -61,4 +61,10 @@ public class MaxQueue2 {
         }
         return res.val;
     }
+
+    public static void main(String[] args) {
+        MaxQueue2 maxQueue2 = new MaxQueue2();
+        maxQueue2.push_back(1);
+        maxQueue2.push_back(2);
+    }
 }
